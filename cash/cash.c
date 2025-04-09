@@ -24,6 +24,7 @@ int calculation(int cents)
         cents -= 25;
     }
     return quarters;
+    printf("%i\n", quarters);
 
     int dimes = 0;
     while (cents >= 10)
