@@ -15,18 +15,28 @@ int main(void)
     calculation(cents);
 }
 
-void calculation(int cents1)
+void calculation(int cents)
 {
     int quarters = 0;
     int dimes = 0;
     int nickels = 0;
     int pennies = 0;
+    int cents1 = cents;
 
     while (cents1 >= 25)
     {
         quarters++;
         cents1 -= 25;
     }
-    printf("%i\n", quarters);
+
+    while (cents1 >= 10)
+    {
+        dimes++;
+        cents1 -= 10;
+    }
+
+    int sum = quarters + dimes;
+    printf("%i\n", sum);
+
 }
 
