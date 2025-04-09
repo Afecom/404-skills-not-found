@@ -35,7 +35,19 @@ void calculation(int cents)
         cents1 -= 10;
     }
 
-    int sum = quarters + dimes;
+    while (cents1 >= 5)
+    {
+        nickels++;
+        cents1 -= 5;
+    }
+
+    while (cents1 >= 1)
+    {
+        pennies++;
+        cents1 -= 1;
+    }
+
+    int sum = quarters + dimes + nickels + pennies;
     printf("%i\n", sum);
 
 }
