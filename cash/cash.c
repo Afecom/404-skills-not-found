@@ -25,6 +25,7 @@ void calculation(int cents1)
     while (cents1 >= 25)
     {
         quarters++;
+        cents1 -= 25;
     }
     printf("%i\n", quarters);
 }
