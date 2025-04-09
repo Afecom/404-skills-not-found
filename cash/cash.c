@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-void calculation(int cents);
+int calculate_coins(int cents);
 
 int main(void)
 {
@@ -12,10 +12,11 @@ int main(void)
     }
     while (cents < 0);
 
-    calculation(cents);
+    calculate_coins(cents);
+    printf()
 }
 
-void calculation(int cents)
+int calculate_coins(int cents)
 {
     int quarters = 0;
     int dimes = 0;
@@ -47,6 +48,6 @@ void calculation(int cents)
         cents1 -= 1;
     }
 
-    int sum = quarters + dimes + nickels + pennies;
-    printf("%i\n", sum);
+    int coins = quarters + dimes + nickels + pennies;
+    return coins;
 }
