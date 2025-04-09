@@ -51,6 +51,6 @@ int calculation(int cents)
 
     int sum = quarters + dimes + nickels + pennies;
 
-    
+    printf("%i\n", sum);
 }
 
