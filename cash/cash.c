@@ -15,14 +15,14 @@ int main(void)
     calculation(cents);
 }
 
-void calculation(int cents)
+void calculation(int cents1)
 {
     int quarters = 0;
     int dimes = 0;
     int nickels = 0;
     int pennies = 0;
 
-    while (cents >= 25)
+    while (cents1 >= 25)
     {
         quarters++;
     }
