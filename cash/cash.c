@@ -10,7 +10,7 @@ int main(void)
     {
         cents = get_int("change owed: ");
     }
-    while (cents <= 0);
+    while (cents < 0);
 
     calculation(cents);
 }
