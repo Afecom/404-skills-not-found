@@ -1,5 +1,5 @@
-#include<cs50.h>
-#include<stdio.h>
+#include <cs50.h>
+#include <stdio.h>
 
 void calculation(int cents);
 
@@ -49,6 +49,4 @@ void calculation(int cents)
 
     int sum = quarters + dimes + nickels + pennies;
     printf("%i\n", sum);
-
 }
-
