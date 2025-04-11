@@ -4,5 +4,10 @@
 int main(void)
 {
     string text = get_string("Please provide a text: ");
-    printf("%c", text[0]);
+
+    int counter = 0;
+    for (int i = 0; i < 5; i++)
+    {
+        
+    }
 }
