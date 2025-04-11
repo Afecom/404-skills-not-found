@@ -5,5 +5,5 @@
 int main(void)
 {
     string text = get_string("Please provide your name to be counted: ");
-    printf("The length of your name is %i\n", strlen(text));
+    
 }
