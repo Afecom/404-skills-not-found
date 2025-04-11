@@ -1,13 +1,9 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
 
 int main(void)
 {
-    string text = get_string("Please provide a text: ");
-
-    int counter = 0;
-    for (int i = 0; i < 5; i++)
-    {
-        
-    }
+    string text = get_string("Please provide your name to be counted: ");
+    printf("The length of your name is %i\n", strlen(text));
 }
