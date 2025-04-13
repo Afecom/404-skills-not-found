@@ -1,8 +1,8 @@
 #include <cs50.h>
 #include <ctype.h>
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
 int converter(string input, int key);
 
@@ -19,7 +19,7 @@ int main(int argc, string argv[])
     int text_length = strlen(argv[1]);
     for (int i = 0; i < text_length; i++)
     {
-        if(!isdigit(argv[1][i]))
+        if (!isdigit(argv[1][i]))
         {
             printf("Usage: ./caesar key\n");
             return 1;
@@ -34,7 +34,6 @@ int main(int argc, string argv[])
 
     converter(plaintext, k);
 }
-
 
 int converter(string input, int key)
 {
@@ -59,5 +58,3 @@ int converter(string input, int key)
     printf("\n");
     return 0;
 }
-
-
