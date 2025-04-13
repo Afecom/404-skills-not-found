@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int converter(string input, int key);
+void encrypt_and_print(string input, int key);
 
 int main(int argc, string argv[])
 {
@@ -33,9 +33,10 @@ int main(int argc, string argv[])
     string plaintext = get_string("Plaintext:  ");
 
     converter(plaintext, k);
+    return 0;
 }
 
-int converter(string input, int key)
+void encrypt_and_print(string input, int key)
 {
     // For each character in the plaintext:
     int text_length = strlen(input);
@@ -56,5 +57,4 @@ int converter(string input, int key)
     }
     printf("ciphertext: %s", input);
     printf("\n");
-    return 0;
 }
