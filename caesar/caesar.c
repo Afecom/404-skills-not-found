@@ -50,6 +50,7 @@ int converter(string input, int key)
         {
             input[j] = ((input[j] - 'a' + key) % 26) + 'a';
         }
+        else if (!)
     }
     printf("ciphertext: %s", input);
     printf("\n");
