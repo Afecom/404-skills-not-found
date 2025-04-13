@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void encrypt_and_print(string input, int key);
+void encrypt(string input, int key);
 
 int main(int argc, string argv[])
 {
@@ -32,7 +32,8 @@ int main(int argc, string argv[])
     // Prompt user for plaintext
     string plaintext = get_string("Plaintext:  ");
 
-    converter(plaintext, k);
+    encrypt(plaintext, k);
+    string encrypted = 
     return 0;
 }
 
