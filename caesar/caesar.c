@@ -36,7 +36,7 @@ int main(int argc, string argv[])
     return 0;
 }
 
-void encrypt_and_print(string input, int key)
+string encrypt(string input, int key)
 {
     // For each character in the plaintext:
     int text_length = strlen(input);
@@ -55,6 +55,11 @@ void encrypt_and_print(string input, int key)
             input[j] = input[j];
         }
     }
+    return input;
+}
+
+void printer(string input)
+{
     printf("ciphertext: %s", input);
     printf("\n");
 }
