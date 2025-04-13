@@ -5,7 +5,7 @@
 #include <string.h>
 
 string encrypt(string input, int key);
-void printer(string input);
+void print_ciphertext(string input);
 
 int main(int argc, string argv[])
 {
@@ -34,7 +34,7 @@ int main(int argc, string argv[])
     string plaintext = get_string("Plaintext:  ");
 
     string encrypted = encrypt(plaintext, k);
-    printer(encrypted);
+    print_ciphertext(encrypted);
 
     return 0;
 }
@@ -42,26 +42,27 @@ int main(int argc, string argv[])
 string encrypt(string input, int key)
 {
     // For each character in the plaintext:
-    int text_length = strlen(input);
+    string to_be_encrypted = input;
+    int text_length = strlen(to_be_encrypted);
     for (int j = 0; j < text_length; j++)
     {
-        if (isupper(input[j]))
+        if (isupper(to_be_encrypted[j]))
         {
-            input[j] = ((input[j] - 'A' + key) % 26) + 'A';
+            to_be_encrypted[j] = ((to_be_encrypted[j] - 'A' + key) % 26) + 'A';
         }
-        else if (islower(input[j]))
+        else if (islower(to_be_encrypted[j]))
         {
-            input[j] = ((input[j] - 'a' + key) % 26) + 'a';
+            to_be_encrypted[j] = ((to_be_encrypted[j] - 'a' + key) % 26) + 'a';
         }
-        else if (!isalpha(input[j]))
+        else if (!isalpha(to_be_encrypted[j]))
         {
-            input[j] = input[j];
+            to_be_encrypted[j] = to_be_encrypted[j];
         }
     }
-    return input;
+    return to_be_encrypted;
 }
 
-void printer(string input)
+void print_ciphertext(string input)
 {
     printf("ciphertext: %s", input);
     printf("\n");
