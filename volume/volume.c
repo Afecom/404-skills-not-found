@@ -28,15 +28,32 @@ int main(int argc, char *argv[])
     if (output == NULL)
     {
         printf("Could not open file.\n");
+        fclose(input);
         return 1;
     }
 
     float factor = atof(argv[3]);
 
-    // TODO: Copy header from input file to output file
-    
+    // Copy header from input file to output file
+    unsigned char header[HEADER_SIZE];
 
-    // TODO: Read samples from input file and write updated data to output file
+    // Read the first 44 bytes and store them in temp array so as to write it to the output file;
+    fread(header, 1, HEADER_SIZE, input);
+
+    // Writes the 44 bytes of header to an output file from the temp array;
+    fwrite(header, 1, HEADER_SIZE, output);
+
+    // Read samples from input file and write updated data to output file
+    int16_t sample;
+
+    while (fread(&sample, sizeof(int16_t), 1, input) != 0)
+    {
+        // do something with sample (like multiply it, or reverse it later)
+        sample *= factor;
+
+        // write it to the output file;
+        fwrite(&sample, sizeof(int16_t), 1, output);
+    }
 
     // Close files
     fclose(input);
