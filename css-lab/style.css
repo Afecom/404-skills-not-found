@@ -1,0 +1,186 @@
+/*
+Trying to reset these things :)
+    *{
+        margin: 0;
+        padding: 0;
+    }
+*/
+
+a{
+    text-decoration: none;
+    color: black;
+    line-height: 25px;
+}
+
+a:hover{
+    color: chocolate;
+}
+
+.button{
+    background-color: darkslategray;
+    color: antiquewhite;
+    border: none;
+    padding: 5px 10px;
+}
+
+.button:hover{
+    background-color: brown;
+    color: whitesmoke;
+}
+
+.hate{
+    background-color: grey;
+    width: 900px;
+    margin: auto;
+    list-style-image: url(./Assets/ul-list-image.png);
+}
+
+.hate h3{
+    padding-top: 8px;
+    padding-left: 8px;
+}
+
+.hate ul{
+    padding-bottom: 10px;
+}
+
+.gym{
+    background-color: aqua;
+    width: 900px;
+    margin: auto;
+    padding-left: 25px;
+}
+
+.hobby{
+    background-color: crimson;
+    width: 900px;
+    margin: auto;
+    list-style-image: url(./Assets/right-checkmark.png);
+}
+
+.hobby h3{
+    padding-top: 8px;
+    padding-left: 8px;
+}
+
+.hobby ol{
+    padding-bottom: 10px;
+}
+
+.userdata{
+    background-color: blanchedalmond;
+    border-width: 3px;
+    border-style: solid;
+    border-color:coral;
+    margin-top: 310px;
+    padding-left: 5px;
+}
+
+.userdata h3{
+    text-align: center;
+}
+
+.form-group{
+    padding-bottom: 10px;
+}
+
+.form-group input, .form-group textarea {
+    width: 20%;
+}
+
+.userdata form label{
+    display: block;
+}
+
+.userdata .button{
+    margin-left: 30px;
+}
+
+.float-box
+{
+    background-color: mistyrose;
+    float: left;
+    width: 33.3%;
+    border: 2px solid coral;
+    margin-top: 15px;
+    padding-left: 3px;
+    box-sizing: border-box;
+}
+
+#most-part{
+    float: left;
+    width: 67%;
+    border: 2px solid salmon;
+    box-sizing: border-box;
+    padding-left: 5px;
+    font-size: large;
+    margin-top: 15px;
+}
+
+#side-part{
+    background-color: cornflowerblue ;
+    float: right;
+    width: 33%;
+    border: 2px solid salmon;
+    box-sizing: border-box;
+    padding-left: 5px;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+.sidebar-container{
+    margin-bottom: 50px;
+}
+
+.box-3{
+    font-family: tahoma, verdana, sans-serif;
+    border: 2px solid saddlebrown;
+    width: 600px;
+    height: 300px;
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+    background-image: url('./Assets/res-bgimg.jpeg');
+    background-repeat: no-repeat;
+}
+
+.box-3 h2{
+    position: absolute;
+    top: 20px;
+    left: 200px;
+}
+
+.box-3 h3{
+    position: absolute;
+    top: 200px;
+    left: 450px;
+}
+
+.my-list{
+    border: 2px solid lime;
+    width: 400px;
+    margin: auto;
+    margin-top: 15px;
+    padding-right: 10px;
+}
+
+.ul-list1 li:nth-child(even){
+    background-color: lime;
+}
+
+.ul-list1 li:nth-child(odd){
+    background-color: cadetblue;
+}
+
+.my-list h3{
+    text-align: center;
+    color: palevioletred;
+}
+
+.test1 td:first-child{
+    color: blue;
+}
+
+.test1 td:nth-child(4){
+    color: blue;
+}

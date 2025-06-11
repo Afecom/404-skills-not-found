@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="description" content="don't know how many times started html">
         <title>Home</title>
+        <link rel="stylesheet" href="../css-lab/style.css">
     </head>
     <body>
         <!-- Just to check how the comment syntax works :) :)-->
@@ -26,7 +27,7 @@
             <video src="./Assets/Grindin.MP4" height="150" controls></video>
             <h2>My Dream Machine Right now :( :(</h2>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/IHTT_7AjoU8?si=8li3I-t6n6I0HvPg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <section style="background-color: aquamarine;">
+            <div class="hobby">
                 <h3>My hobbies :)</h3>
                 <ol>
                     <li>Coding + learning</li>
@@ -36,21 +37,21 @@
                     <li>Playing Soccer</li>
                     <li>Surfing through my social medias</li>
                 </ol>
-            </section>
-            <section style="background-color: red; color: white;">
+            </div>
+            <div class="hate">
                 <h3>What I don't like :(</h3>
                 <ul>
                     <!-- To be translated :) -->
-                    <li>Masmesel</li>
+                    <li>Pretending <b><big>OMG</big></b></li>
                     <li>Getting mad</li>
                     <li>Arguing</li>
                     <li>Creating boring vibes around me</li>
-                    <li>The list goes one</li>
+                    <li>The list goes on</li>
                 </ul>
-            </section>
-            <section style="background-color: lightblue;">
-                <caption><b>My Weekly GYM Schedule:</b></caption>
+            </div>
+            <div class="gym">
                 <table>
+                    <caption><b>My Weekly GYM Schedule:</b></caption>
                     <thead style="font-weight: bold;">
                         <tr>
                             <td>Monday</td>
@@ -72,7 +73,7 @@
                             <td>Chest</td>
                             <td>Recovery</td>
                         </tr>
-                        <tr>
+                        <tr class="test1">
                             <td>Shoulders</td>
                             <td>Biceps</td>
                             <td>Triceps</td>
@@ -87,10 +88,79 @@
                         </tr>
                     </tbody>
                 </table>
-            </section>
+            </div>
+            <div class="float-container"></div>
+                <div class="float-box">
+                    <h3>Let's see what happens, practicing floats...</h3>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat totam aliquid quidem earum iusto debitis eveniet odio quas velit, nulla atque laudantium molestias sed natus libero pariatur sit ut! Id?
+                    </p>
+                </div>
+                <div class="float-box">
+                    <h3>Let's see what happens, practicing floats...</h3>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat totam aliquid quidem earum iusto debitis eveniet odio quas velit, nulla atque laudantium molestias sed natus libero pariatur sit ut! Id?
+                    </p>
+                </div>
+                <div class="float-box">
+                    <h3>Let's see what happens, practicing floats...</h3>
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat totam aliquid quidem earum iusto debitis eveniet odio quas velit, nulla atque laudantium molestias sed natus libero pariatur sit ut! Id?
+                    </p>
+                </div>
+            </div>
+            <div class="sidebar-container">
+                <div id="most-part">
+                    <h3>Lets see what happens again:) kind of side-bar this time!</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero laboriosam consequuntur est laborum? Qui repudiandae modi quae, vitae, natus laborum eaque voluptatibus recusandae provident voluptate nemo, beatae voluptatem. Delectus, voluptates!</p>
+                </div>
+                <div id="side-part">
+                    <h3>Lets see what happens again:) kind of side-bar this time!</h3>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero laboriosam consequuntur est laborum? Qui repudiandae modi quae, vitae, natus laborum eaque voluptatibus recusandae provident voluptate nemo, beatae voluptatem. Delectus, voluptates!</p>
+                </div>
+            </div>
+            <div class="userdata">
+                <h3>So now you know a little bit about me. Know <u><i>its time to know you :)</i></u></h3>
+                <form>
+                    <div class="form-group">
+                        <label for="">Name:)</label>
+                        <input type="text" name="name" id="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Can I take your phone?</label>
+                        <input type="tel" name="phone" id="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">What do you like :)</label>
+                        <textarea name="hobby" id=""></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="">What do you hate the most</label>
+                        <textarea name="hate" id=""></textarea>
+                    </div>
+                    <input class="button" type="submit" value="Submit">
+                </form>
+                 <h4>Glad to know you then :) </h4>
+            </div>
+            <div class="box-3">
+                <h2>Positioning baby!</h2>
+                <h3>Let's get the freedom we deserve</h3>
+            </div>
+            <div class="my-list">
+                <h3>Decorative huh? </h3>
+                <ul class="ul-list1">
+                    <li>list-1</li>
+                    <li>list-2</li>
+                    <li>list-3</li>
+                    <li>list-4</li>
+                    <li>list-5</li>
+                    <li>list-6</li>
+                    <li>list-7</li>
+                    <li>list-8</li>
+                </ul>
+            </div>
         </main>
-
-        <footer>
+        <footer class="footer">
             <a href="Conuact-us.html">Contact-me</a><br>
             <a href="./Dir_1/About-us.html">About-me</a>
         </footer>
