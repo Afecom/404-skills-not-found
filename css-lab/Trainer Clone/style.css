@@ -1,0 +1,89 @@
+body{
+    background-color: lightgray;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16;
+    line-height: 1.6em;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+#main-header{
+    background-color: coral;
+    color: white;
+}
+
+#main-nav ul{
+    padding: 0;
+}
+
+#my-list li{
+    list-style: none;
+    display: inline;
+}
+
+#my-list a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding-right: 15px;
+}
+
+#main-nav{
+    background-color: #333;
+}
+
+#showcase{
+    background-image: url('../Assets/Showcasebg.jpeg');
+    background-size: 100% 100%;
+    text-align: center;
+    min-height: 300px;
+    background-repeat: no-repeat;
+    margin-bottom: 40px;
+}
+
+#showcase h1{
+    color: white;
+    line-height: 1.6em;
+    font-size: 30px;
+    padding-top: 60px;
+}
+
+#main{
+    float: left;
+    width: 70%;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+
+#sidebar{
+    float: right;
+    width: 30%;
+    background-color: #333;
+    color: white;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+@media(max-width:700px){
+    #main{
+        float: none;
+        width: 100%;
+    }
+
+    #sidebar{
+        float: none;
+        width: 100%;
+    }
+}
+
+#main-footer{
+    background-color: #333;
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+}
