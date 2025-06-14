@@ -16,6 +16,10 @@ a:hover{
     color: chocolate;
 }
 
+iframe{
+    display: inline;
+}
+
 .button{
     background-color: darkslategray;
     color: antiquewhite;
@@ -183,4 +187,14 @@ a:hover{
 
 .test1 td:nth-child(4){
     color: blue;
+}
+
+#iframes{
+    margin-top: 20px;
+}
+
+#iframes h2{
+    background-color: coral;
+    overflow: hidden;
+    margin: 0;
 }
