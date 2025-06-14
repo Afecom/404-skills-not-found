@@ -1,0 +1,56 @@
+body{
+    background-color: rgb(27, 29, 56);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+button{
+    padding: 8px 30px;
+    border: 1px solid rgb(49, 42, 160);
+    background-color: inherit;
+    color: white;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+button:hover{
+    background-color: rgb(121, 0, 246);
+}
+
+.main-content{
+    display: flex;
+    min-height: 900px;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.card{
+    border: 10px solid rgb(33, 37, 68);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+}
+
+.card:hover{
+    border-color: rgb(121, 0, 246);
+}
+
+.card h6{
+    margin: 5px;
+}
+
+.purchase{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.perks{
+    padding-bottom: 30px;
+}
