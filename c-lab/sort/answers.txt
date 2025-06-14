@@ -1,0 +1,10 @@
+sort1 uses: Bubble sort
+
+How do you know?: Took .02s at the best case, which is tested using the sorted5000.txt, and took .066s which is completly different from the previous one, at the worst case which is tested using the reversed5000.txt. this leads us to conclude that the algorithm being used is the bubble sort.
+
+sort2 uses: Merged sort
+
+How do you know?: Took .02s at the best case which is tested using the sorted5000.txt, ans also took .02s which is the same as the best case at the worst case. and also took less time than the selection sort which leads us to conclude it to be using the merged sort.
+sort3 uses: Selection sort
+
+How do you know?: Took .043s at the best case which is kind of high compared to the previous ones, which I think uses selection sort. took .040s at the worst case.
