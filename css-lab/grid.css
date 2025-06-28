@@ -1,0 +1,40 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+}
+
+.item{
+    background-color: lightcoral;
+    border: 2px solid red;
+}
+
+.container{
+    display: grid;
+    grid-template-rows: 100px 200px 100px;
+    grid-template-columns: 150px 300px;
+    grid-template-areas: 
+    'header header'
+    'main aside'
+    'footer footer';
+    grid-auto-columns: 100px;
+    grid-auto-flow: column;
+}
+
+.item-1{
+    grid-area: header;
+}
+
+.item-2{
+    grid-area: main;
+}
+
+.item-3{
+    grid-area: aside;
+}
+
+.item-4{
+    background-color: aqua;
+    grid-area: footer;
+}
