@@ -1,0 +1,338 @@
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    font-weight: 500, 700;
+    src: url(./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: "Plus Jakarta Sans";
+    font-weight: 400, 500;
+    font-style: italic;
+    src: url(./assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf);
+}
+
+:root{
+
+    /* Colors */
+    --lime-color: hsl(61, 70%, 52%);
+    --red-color: hsl(4, 69%, 50%);
+    --white-color: hsl(0, 0%, 100%);
+    --slate-100: hsl(202, 86%, 94%);
+    --slate-300: hsl(203, 41%, 72%);
+    --slate-500: hsl(200, 26%, 54%);
+    --slate-700: hsl(200, 24%, 40%);
+    --slate-900: hsl(202, 55%, 16%);
+
+    /* Typography */
+    --paragraph-font-size: 16px;
+}
+
+@layer base{
+    body{
+        margin: 0;
+        padding: 0;
+        font-family: "Plus Jakarta Sans";
+        height: 100dvh;
+    }
+    *,
+    *::after,
+    *::before{
+        box-sizing: border-box;
+    }
+}
+
+@layer layout{
+    .inputs{
+        padding: 10px 20px;
+        width: 100%;
+        display: grid;
+    }
+
+    .data-container{
+        display: flex;
+        flex-direction: column;
+        gap: .25rem;
+        margin-top: 2rem;
+    }
+
+    input:not([type="radio"]){
+        width: 95%;
+        max-width: 100%;
+        height: 45px;
+        margin: auto;
+        border: 1px solid var(--slate-300);
+        border-radius: 5px;
+    }
+    input:not([type="radio"]):focus{
+        outline-color: var(--lime-color);
+    }
+
+    #mortgage-amount-field{
+        padding-left: 2.5rem;
+    }
+
+    .sign-input-container{
+        position: relative;
+    }
+
+    .input-description{
+        background-color: var(--slate-100);
+        padding: .7rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 1.3rem;
+    }
+    .right-aligned{
+        background-color: var(--slate-100);
+        padding: .7rem;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: .1rem;
+    }
+
+    .radio-container{
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        > p{
+            margin-bottom: 0;
+        }
+    }
+
+    .radio-input{
+        width: 95%;
+        display: flex;
+        gap: 1rem;
+        padding: .6rem .25rem;
+        padding-left: 1rem;
+        border: 1px solid var(--slate-300);
+        border-radius: 5px;
+        color: red;
+
+        > input{
+            width: 1.2rem;
+            height: 1.2rem;
+            margin-left: 0;
+        }
+
+    }
+
+    .radio-label{
+        color: red;
+    }
+
+    .calculate{
+        background-color: var(--lime-color);
+        padding: .6rem 1rem;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        gap: .5rem;
+        margin-top: .5remrem;
+        width: 80%;
+        border-radius: 2rem;
+        > button{
+            background-color: transparent;
+            border: none;
+            color: var(--slate-700);
+        }
+    }
+
+    .output{
+        background-color: var(--slate-900);
+        padding: 1rem 0;
+        margin-top: 1rem;
+    }
+    .default{
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        > h2{
+            color: var(--white-color);
+        }
+        > p{
+            font-size: var(--paragraph-font-size);
+            color: var(--slate-500);
+            margin-top: 0;
+        }
+    }
+    .result-output{
+        background-color: var(--slate-900);
+        padding: 1rem;
+    }
+    .result-description{
+        > h2{
+            color: var(--white-color);
+        }
+        > p{
+            color: var(--slate-500);
+            font-size: var(--paragraph-font-size);
+        }
+    }
+    .result-container{
+        background-color: rgb(13, 36, 48);
+        border-radius: 1rem;
+        border-top: 5px solid var(--lime-color);
+        padding: .5rem 1rem;
+        margin-top: 4rem;
+    }
+    .monthly-repayments{
+        margin-bottom: 3rem;
+        > p{
+            color: var(--slate-500);
+        }
+        > h1{
+            color: var(--lime-color);
+        }
+    }
+    .result-line{
+        border-color: var(--slate-700);
+    }
+    .total-payment{
+        margin-top: 3rem;
+        > p{
+            color: var(--slate-500);
+        }
+        > h3{
+            color: var(--slate-300);
+        }
+    }
+    .error{
+        > input{
+            border-color: var(--red-color);
+        }
+        > .input-description{
+            background-color: red;
+        }
+        > .right-aligned{
+            background-color: red;
+        }
+    }
+    #mortgage-term-error,
+    #mortgage-amount-error,
+    #interest-rate-error,
+    #interest-repay-error{
+        color: var(--red-color);
+        font-size: small;
+        margin-top: 0px;
+    }
+
+    .hidden{
+        display: none;
+    }
+    
+}
+
+@layer utility{
+    .title {
+        > h2{
+            color: var(--slate-900);
+            margin-bottom: 10px;  
+            margin-top: 5px; 
+        }
+
+        > button{
+            color: var(--slate-700);
+            border: none;
+            background-color: transparent;
+        }
+    }
+    label{
+            color: var(--slate-700)
+        }   
+}
+
+@media (min-width: 768px){
+    body{
+        background-color: var(--slate-100);
+        display: grid;
+        justify-items: center;
+        align-content: center;
+    }
+    main{
+        background-color: white;
+        display: flex;
+        border-radius: 12px;
+        width: 70%;
+    }
+    input:not([type="radio"]):focus{
+        outline-color: var(--lime-color);
+    }
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button{
+        -webkit-appearance: none;
+    }
+
+    .sign-input-container input:focus + .input-description{
+        background-color: var(--lime-color);
+    }
+    .sign-input-container input:focus + .right-aligned{
+        background-color: var(--lime-color);
+    }
+
+    #repayment-radio, #interest-radio{
+        accent-color: var(--lime-color);
+    }
+
+    .title{
+        position: relative;
+        > button{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    }
+    .term-rate{
+        display: flex;
+        gap: 1rem;
+        width: 100%;
+
+        > .data-container{
+            width: 47%;
+        }
+    }
+    .input-description{
+        right: .75rem;
+    }
+
+    .output{
+        border-radius: inherit;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 6rem;
+        display: grid;
+        padding: 0 .5rem;
+        width: 100%;
+        margin-top: 0;
+    }
+    .calculate{
+        width: 60%;
+        margin: 2rem 0;
+        > button{
+            background-color: transparent;
+            border: none;
+            color: var(--slate-900);
+        }
+        > button:hover{
+            cursor: pointer;
+        }
+    }
+    .calculate:hover{
+        background-color: rgb(236, 238, 156);
+        cursor: pointer;
+    }
+    .result-output{
+        height: fit-content;
+    }
+    .radio-input:hover{
+        border: 1px solid var(--lime-color);
+        cursor: pointer;
+    }
+}

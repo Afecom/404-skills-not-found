@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+</head>
+<body>
+  <main>
+    <form class="inputs" id="user-form">
+      <div class="title">
+        <h2>Mortgage Calculator</h2>
+        <button href="#" id="reset-link" type="reset"><u>Clear All</u></button>
+      </div>
+
+      <div class="data-container">
+        <label for="mortgage-amount-field">Mortgage Amount</label>
+        <div class="sign-input-container">
+          <input type="number" id="mortgage-amount-field" name="mortgage-amount">
+          <div class="right-aligned">£</div>
+        </div>
+        <p id="mortgage-amount-error"></p>
+      </div>
+
+      <div class="term-rate">
+        <div class="data-container">
+          <label for="mortgage-term-field">Mortgage Term</label>
+          <div class="sign-input-container">
+            <input type="number" id="mortgage-term-field" name="mortgage-term">
+            <div class="input-description">years</div>
+          </div>
+          <p id="mortgage-term-error"></p>
+        </div>
+
+        <div class="data-container">
+          <label for="interest-rate-field">Interest Rate</label>
+          <div class="sign-input-container">
+            <input type="number" id="interest-rate-field" name="interest-rate">
+            <div class="input-description">%</div>
+          </div>
+          <p id="interest-rate-error"></p>
+        </div>
+      </div>
+      <div class="radio-container">
+        <p style="color: hsl(200, 24%, 40%);">Mortgage Type</p>
+        <div class="radio-input">
+          <input type="radio" name="interest-repay" id="repayment-radio" value="repayment">
+          <label for="repayment-radio" class="radio-label" style="color: hsl(202, 55%, 16%); font-weight: 700;">Repayment</label>
+        </div>
+        <div class="radio-input">
+          <input type="radio" name="interest-repay" id="interest-radio" value="interest">
+          <label for="interest-radio" class="radio-label" style="color: hsl(202, 55%, 16%); font-weight: 700;">Interest Only</label>
+        </div>
+        <p id="interest-repay-error"></p>
+      </div>
+      <div class="calculate">
+        <img src="./assets/images/icon-calculator.svg" alt="Calculator-icon">
+        <button type="submit" id="calculator-button">Calculate Repayments</button>
+      </div>
+    </form>
+
+    <div class="output">
+
+      <!-- Empty results start -->
+      <div class="default">
+        <img src="./assets/images/illustration-empty.svg" alt="Accounting-image">
+        <h2>Results shown here</h2>
+
+        <p>Complete the form and click “calculate repayments” to see what 
+        your monthly repayments would be.</p>
+      </div>
+
+      <div class="result-output hidden">
+        <div class="result-description">
+          <h2>Your results</h2>
+
+          <p>Your results are shown below based on the information you provided. 
+          To adjust the results, edit the form and click “calculate repayments” again.</p>
+        </div>
+
+        <div class="result-container">
+          <div class="result">
+            <div class="monthly-repayments">
+              <p>Your monthly repayments</p>
+              <h1 id="main-result"></h1>
+            </div>
+          </div>
+          <hr class="result-line">
+          <div class="total-payment">
+            <p>Total you'll repay over the term</p>
+            <h3 id="remaining-field"></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+  <script src="./script.js"></script>
+</body>
+</html>
