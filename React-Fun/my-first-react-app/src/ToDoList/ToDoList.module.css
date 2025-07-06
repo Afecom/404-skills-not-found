@@ -1,0 +1,55 @@
+body{
+    background-color: black;
+    text-align: center;
+}
+h1{
+    color: white;
+}
+ul{
+    margin: 0;
+}
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.addButton{
+    background-color: lightgreen;
+    color: white;
+    padding: .3rem .8rem;
+}
+.taskInput{
+    height: 1.3rem;
+}
+.taskContainer{
+    background-color: white;
+    width: 50%;
+    border-radius: .5rem;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+    margin-top: 1rem;
+    > p{
+        font-family: arial, Arial, Helvetica, sans-serif;
+    }
+}
+.deleteButton{
+    padding: 0 .5rem;
+    margin: .8rem 0;
+    background-color: rgb(177, 52, 52);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.movers{
+    padding: 5px 5px;
+    background-color: lightskyblue;
+    margin: .8rem 0;
+    border-radius: 5px;
+}
+.controlContainer{
+    display: flex;
+    gap: .8rem;
+}

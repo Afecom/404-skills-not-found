@@ -1,0 +1,8 @@
+body{
+    height: 100dvh;
+}
+.componentContainer{
+    border: 3px solid;
+    padding: 1rem;
+    width: 80%;
+}

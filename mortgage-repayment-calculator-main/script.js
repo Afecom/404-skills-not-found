@@ -111,4 +111,13 @@ function mortgagecalculator(){
         remainingField.innerHTML = "£" + currencyFormatter(totalPayment);
         console.log(totalPayment);
     }
+    if(repaymentInput.checked || interestInput.checked){
+        defaultSection.style.display = 'none';
+        outputSection.style.display = 'grid';
+    }
 }
+
+clear.addEventListener('click', () => {
+    outputSection.style.display = 'none';
+    defaultSection.style.display = 'flex';
+})

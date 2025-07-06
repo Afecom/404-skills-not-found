@@ -1,0 +1,16 @@
+.container{
+    border: 1px solid aquamarine;
+    width: 50%;
+    align-self: center;
+    justify-self: center;
+}
+.input{
+    margin: .5rem;
+    height: 1.5rem;
+}
+.radio{
+    margin: .5rem;
+}
+.textArea{
+    margin: 1rem 0;
+}

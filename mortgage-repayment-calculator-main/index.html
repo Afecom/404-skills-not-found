@@ -22,7 +22,7 @@
         <label for="mortgage-amount-field">Mortgage Amount</label>
         <div class="sign-input-container">
           <input type="number" id="mortgage-amount-field" name="mortgage-amount">
-          <div class="right-aligned">£</div>
+          <span class="left-aligned">£</span>
         </div>
         <p id="mortgage-amount-error"></p>
       </div>
@@ -31,8 +31,8 @@
         <div class="data-container">
           <label for="mortgage-term-field">Mortgage Term</label>
           <div class="sign-input-container">
-            <input type="number" id="mortgage-term-field" name="mortgage-term">
-            <div class="input-description">years</div>
+            <input type="number" id="mortgage-term-field" name="mortgage-term" class="right-padding">
+            <span class="input-description">years</span>
           </div>
           <p id="mortgage-term-error"></p>
         </div>
@@ -40,20 +40,20 @@
         <div class="data-container">
           <label for="interest-rate-field">Interest Rate</label>
           <div class="sign-input-container">
-            <input type="number" id="interest-rate-field" name="interest-rate">
-            <div class="input-description">%</div>
+            <input type="number" id="interest-rate-field" name="interest-rate" class="percentage-padding">
+            <span class="input-description">%</span>
           </div>
           <p id="interest-rate-error"></p>
         </div>
       </div>
       <div class="radio-container">
-        <p style="color: hsl(200, 24%, 40%);">Mortgage Type</p>
+        <label style="color: hsl(200, 24%, 40%);"">Mortgage Type</label>
         <div class="radio-input">
-          <input type="radio" name="interest-repay" id="repayment-radio" value="repayment">
+          <input type="radio" name="interest-repay" id="repayment-radio" class="radio-button" value="repayment">
           <label for="repayment-radio" class="radio-label" style="color: hsl(202, 55%, 16%); font-weight: 700;">Repayment</label>
         </div>
         <div class="radio-input">
-          <input type="radio" name="interest-repay" id="interest-radio" value="interest">
+          <input type="radio" name="interest-repay" id="interest-radio" value="interest" class="radio-button">
           <label for="interest-radio" class="radio-label" style="color: hsl(202, 55%, 16%); font-weight: 700;">Interest Only</label>
         </div>
         <p id="interest-repay-error"></p>
