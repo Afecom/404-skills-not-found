@@ -1,4 +1,4 @@
-import { faArrowRightFromBracket, faBars, faCircleInfo, faGear, faGears, faInfo, faUser, faUserGraduate } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRightFromBracket, faBars, faCircleInfo, faGear, faGears, faInfo, faUser, faUserGraduate, faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Outlet } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
@@ -32,8 +32,9 @@ function Layout(){
                 </div>
             )}
             {isProfileVisible && (
-                <div className="rounded-md border-1 border-gray-400 bg-white absolute top-14 right-3 md:w-[15%] flex flex-col gap-2 p-2 w-[40%] z-20 overflow-hidden">
-                    <div className="flex gap-2 items-center">
+                <div className="rounded-md border-1 border-gray-400 bg-white absolute top-14 right-3 md:w-[15%] flex flex-col gap-2 p-2 w-[45%] z-20 overflow-hidden">
+                    <FontAwesomeIcon icon={faX} className="absolute right-3 top-2 rounded-ful hover:cursor-pointer text-blue-950 hover:text-blue-300" onClick={() => dispatch(closeProfile())}/>
+                    <div className="flex gap-2 items-center mt-4">
                         <FontAwesomeIcon icon={faUser} className="p-2 rounded-full bg-blue-950 hover:cursor-pointer text-white"/>
                         <p>{username}</p>
                     </div>
