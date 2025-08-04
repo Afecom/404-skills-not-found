@@ -5,12 +5,12 @@ const authSlice = createSlice({
     initialState: {
         users: [
             {
-                username: 'admin',
+                username: 'Administrator',
                 password: 'admin@4231',
                 role: 'admin'
             },
             {
-                username: 'member',
+                username: 'customer',
                 password: 'member@4231',
                 role: 'member'
             },

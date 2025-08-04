@@ -3,11 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 const asideSlce = createSlice({
     name: "aside",
     initialState: {
-        status: "hidden"
+        status: false
     },
     reducers: {
-        open: (state) => {state.status = "visible"},
-        close: (state) => {state.status = "hidden"},
+        open: (state) => {state.status = true},
+        close: (state) => {state.status = false},
     }
 })
 

@@ -1,0 +1,11 @@
+$big-font-size: 2rem;
+@mixin fontSize($size){
+    font-size: $size;
+    font-family: monospace;
+    font-weight: 300;
+    color: blue;
+}
+
+.gasPump{
+    @include fontSize($big-font-size)
+}

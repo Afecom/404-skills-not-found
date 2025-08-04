@@ -1,14 +1,13 @@
 import { faGasPump, faLock, faUser } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useSelector, useDispatch } from "react-redux"
-import { login } from "../slices/authslice"
-import { useEffect } from "react"
+import { useDispatch } from "react-redux"
+import { login } from "../../slices/authslice"
 import { useNavigate } from "react-router"
+import style from "./login.module.scss"
 
 function Login(){
     const dispatch = useDispatch() 
     const navigate = useNavigate()
-    const currentUser = useSelector((state) => state.auth.currentUser)
     function submitHandler(e){
         e.preventDefault()
 

@@ -1,7 +1,7 @@
 
 function Dashboard(){
     return(
-        <div>
+        <div className="h-full">
             <p>This is the dashboard page</p>
         </div>
     )
