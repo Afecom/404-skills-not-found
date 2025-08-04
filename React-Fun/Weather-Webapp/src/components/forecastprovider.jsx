@@ -20,7 +20,7 @@ const axiosInstance = axios.create({
                         }
                     });
                     setWeatherData(response.data)
-                    console.log(weather)
+                    console.log(weatherData)
                 }
                 catch (error){
                     console.error("There was an error fetching the data from the API", error)
