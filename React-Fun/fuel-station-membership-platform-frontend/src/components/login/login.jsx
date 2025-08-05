@@ -9,9 +9,20 @@ function Login(){
     const dispatch = useDispatch() 
     const navigate = useNavigate()
     const isLoggedIn = useSelector((state) => state.auth.isLoggedIn)
+    const username = useSelector((state) => state.auth.currentUser?.username)
+    const role = useSelector((state) => state.auth.currentUser?.role)
     useEffect(() => {
         if (isLoggedIn) {
             navigate("/", { replace: true })
+            const token = Math.random().toString(34).substr(2);
+            const expiresAt = Date.now() + 60 * 60 * 1000;
+            const currentUser = {
+                username: username,
+                role: role
+            }
+            localStorage.setItem("token", token);
+            localStorage.setItem("expiresAt", expiresAt);
+            localStorage.setItem("currentUser", JSON.stringify(currentUser))
         }
     }, [isLoggedIn, navigate])
     function submitHandler(e){

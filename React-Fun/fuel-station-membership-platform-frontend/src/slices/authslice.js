@@ -17,10 +17,18 @@ const authSlice = createSlice({
         ],
         currentUser: null,
         isLoggedIn: false,
+        token: null,
     },
     reducers:{
         login: (state, action) => {
-            const {username, password} = action.payload
+            const {username, password, token, role, skipValidation} = action.payload
+
+            if(skipValidation){
+                state.token = token;
+                state.isLoggedIn = true;
+                state.currentUser = {username, role};
+                return;
+            }
 
             const user = state.users.find(
                 (user) => user.username === username && user.password === password
@@ -39,6 +47,10 @@ const authSlice = createSlice({
         logout: (state) => {
             state.isLoggedIn = false;
             state.currentUser = null;
+            state.token = null;
+            localStorage.removeItem("token");
+            localStorage.removeItem("expiresAt");
+            localStorage.removeItem("currentUser")
         }
     }
 })

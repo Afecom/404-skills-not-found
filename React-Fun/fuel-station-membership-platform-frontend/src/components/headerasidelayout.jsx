@@ -9,6 +9,7 @@ import { logout } from "../slices/authslice";
 function Layout(){
     const dispatch = useDispatch()
     const username = useSelector((state) => state.auth.currentUser?.username)
+    const token = useSelector((state) => state.auth.token)
     const role = useSelector((state) => state.auth.currentUser?.role)
     const isAsideVisible = useSelector((state) => state.aside.status)
     const isProfileVisible = useSelector((state) => state.profile.isOpen)
@@ -47,7 +48,10 @@ function Layout(){
                         <FontAwesomeIcon icon={faCircleInfo} className="p-2 rounded-full bg-blue-950 text-white hover:cursor-pointer"/>
                         <p>Info</p>
                     </div>
-                    <div className="flex gap-2 items-center hover:bg-blue-300 rounded-md p-1" onClick={() => dispatch(logout())}>
+                    <div className="flex gap-2 items-center hover:bg-blue-300 rounded-md p-1" onClick={() => {
+                        dispatch(logout());
+                        dispatch(closeProfile())
+                    }}>
                         <FontAwesomeIcon icon={faArrowRightFromBracket} className="p-2 rounded-full bg-blue-950 text-white hover:cursor-pointer"/>
                         <p>Logout</p>
                     </div>
