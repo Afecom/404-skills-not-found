@@ -1,15 +1,15 @@
-import { faArrowRightFromBracket, faBars, faCircleInfo, faGear, faGears, faInfo, faUser, faUserGraduate, faX } from "@fortawesome/free-solid-svg-icons";
+import { faAddressCard, faArrowRightFromBracket, faBars, faCircleInfo, faGear, faHome, faPiggyBank, faUser, faUsers, faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Outlet } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
 import { close, open } from "../slices/asideslice";
 import { openProfile, closeProfile } from "../slices/profileslice";
 import { logout } from "../slices/authslice";
+import AsideNav from "./asidenavs";
 
 function Layout(){
     const dispatch = useDispatch()
     const username = useSelector((state) => state.auth.currentUser?.username)
-    const token = useSelector((state) => state.auth.token)
     const role = useSelector((state) => state.auth.currentUser?.role)
     const isAsideVisible = useSelector((state) => state.aside.status)
     const isProfileVisible = useSelector((state) => state.profile.isOpen)
@@ -24,7 +24,15 @@ function Layout(){
         <div className="relative min-h-screen">
             <aside className={`fixed top-0 left-0 ${isAsideVisible ? "w-[60%]" : "w-0 overflow-hidden"} z-20 bg-white h-full md:w-[20%] 
             border-1 border-gray-300 transition-all duration-300 ease-in-out`}>
-                <p>this is an aside</p>
+                <header className="h-12 border-b-1 border-b-gray-400 flex justify-center items-center font-bold">
+                    Fuel Membership System
+                </header>
+                <nav className="mt-4 px-4">
+                    <AsideNav icon={faHome} button={"Dashboard"} navigate={"/"}/>
+                    <AsideNav icon={faUsers} button={"Members"} navigate={"/members"}/>
+                    <AsideNav icon={faAddressCard} button={"Staffs"} navigate={"/staffs"}/>
+                    <AsideNav icon={faPiggyBank} button={"Top-UP"} navigate={"/topup"}/>
+                </nav>
             </aside>
             {isAsideVisible && (
                 <div 

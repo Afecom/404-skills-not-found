@@ -1,5 +1,9 @@
 import Login from "../components/login/login.jsx"
 import Dashboard from "../components/dashboard"
+import Members from "../components/members.jsx"
+import Reports from "../components/reports.jsx"
+import Staffs from "../components/staffs.jsx"
+import TopUp from "../components/topup.jsx"
 import { Routes, Route } from "react-router"
 import Layout from "../components/headerasidelayout"
 import ProtectedRoute from "../components/protectedroutes.jsx"
@@ -23,11 +27,15 @@ function App(){
         <Routes>
             <Route path="/login" element={<Login />} />
             <Route element={
-                <ProtectedRoute>
-                    <Layout />
-                </ProtectedRoute>
-            }>
+                    <ProtectedRoute>
+                        <Layout />
+                    </ProtectedRoute>
+                }>
                 <Route index element={<Dashboard />} />
+                <Route path="/members" element={<Members />}/>
+                <Route path="/reports" element={<Reports />}/>
+                <Route path="/staffs" element={<Staffs />}/>
+                <Route path="/topup" element={<TopUp />}/>
             </Route>
         </Routes>
     )
