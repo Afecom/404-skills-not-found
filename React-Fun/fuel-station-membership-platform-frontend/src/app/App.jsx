@@ -1,17 +1,21 @@
 import Login from "../components/login/login.jsx"
 import Dashboard from "../components/dashboard"
-import ProtectedRoutes from "../components/protectedroutes"
 import { Routes, Route } from "react-router"
 import Layout from "../components/headerasidelayout"
+import ProtectedRoute from "../components/protectedroutes.jsx"
 
 function App(){
     return(
         <Routes>
-            <Route path="/" element={<Login />} />
-            <Route element={<Layout />}>
-                    <Route path="/dashboard" element={<ProtectedRoutes><Dashboard /></ProtectedRoutes>} />
+            <Route path="/login" element={<Login />} />
+            <Route element={
+                <ProtectedRoute>
+                    <Layout />
+                </ProtectedRoute>
+            }>
+                <Route index element={<Dashboard />} />
             </Route>
         </Routes>
-        )
+    )
 }
 export default App

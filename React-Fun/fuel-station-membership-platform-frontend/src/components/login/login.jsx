@@ -1,13 +1,19 @@
 import { faGasPump, faLock, faUser } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { login } from "../../slices/authslice"
 import { useNavigate } from "react-router"
-import style from "./login.module.scss"
+import { useEffect } from "react"
 
 function Login(){
     const dispatch = useDispatch() 
     const navigate = useNavigate()
+    const isLoggedIn = useSelector((state) => state.auth.isLoggedIn)
+    useEffect(() => {
+        if (isLoggedIn) {
+            navigate("/", { replace: true })
+        }
+    }, [isLoggedIn, navigate])
     function submitHandler(e){
         e.preventDefault()
 
@@ -16,10 +22,6 @@ function Login(){
         const password = form.elements.password.value.trim()
 
         dispatch(login({username, password}))
-
-        if (username && password){
-            navigate("/dashboard", {replace: true})
-        }
     }
         return(
         <main className="h-[100dvh] flex flex-col justify-center items-center">

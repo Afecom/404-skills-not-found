@@ -4,6 +4,7 @@ import { Outlet } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
 import { close, open } from "../slices/asideslice";
 import { openProfile, closeProfile } from "../slices/profileslice";
+import { logout } from "../slices/authslice";
 
 function Layout(){
     const dispatch = useDispatch()
@@ -34,7 +35,7 @@ function Layout(){
             {isProfileVisible && (
                 <div className="rounded-md border-1 border-gray-400 bg-white absolute top-14 right-3 md:w-[15%] flex flex-col gap-2 p-2 w-[45%] z-20 overflow-hidden">
                     <FontAwesomeIcon icon={faX} className="absolute right-3 top-2 rounded-ful hover:cursor-pointer text-blue-950 hover:text-blue-300" onClick={() => dispatch(closeProfile())}/>
-                    <div className="flex gap-2 items-center mt-4">
+                    <div className="flex gap-2 items-center mt-4 md:mt-0">
                         <FontAwesomeIcon icon={faUser} className="p-2 rounded-full bg-blue-950 hover:cursor-pointer text-white"/>
                         <p>{username}</p>
                     </div>
@@ -46,7 +47,7 @@ function Layout(){
                         <FontAwesomeIcon icon={faCircleInfo} className="p-2 rounded-full bg-blue-950 text-white hover:cursor-pointer"/>
                         <p>Info</p>
                     </div>
-                    <div className="flex gap-2 items-center hover:bg-blue-300 rounded-md p-1">
+                    <div className="flex gap-2 items-center hover:bg-blue-300 rounded-md p-1" onClick={() => dispatch(logout())}>
                         <FontAwesomeIcon icon={faArrowRightFromBracket} className="p-2 rounded-full bg-blue-950 text-white hover:cursor-pointer"/>
                         <p>Logout</p>
                     </div>

@@ -16,6 +16,7 @@ const authSlice = createSlice({
             },
         ],
         currentUser: null,
+        isLoggedIn: false,
     },
     reducers:{
         login: (state, action) => {
@@ -29,12 +30,16 @@ const authSlice = createSlice({
                     username: user.username,
                     role: user.role,
                 }
+                state.isLoggedIn = true;
             }
             else{
                 alert("invalid credentials")
             }
         },
-        logout: (state) => state.currentUser = null
+        logout: (state) => {
+            state.isLoggedIn = false;
+            state.currentUser = null;
+        }
     }
 })
 
