@@ -1,9 +1,9 @@
-import { faGasPump, faLock, faUser } from "@fortawesome/free-solid-svg-icons"
+import { faGasPump, faLock, faUser, faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useDispatch, useSelector } from "react-redux"
 import { login } from "../../slices/authslice"
 import { useNavigate } from "react-router"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 function Login(){
     const dispatch = useDispatch() 
@@ -11,6 +11,8 @@ function Login(){
     const isLoggedIn = useSelector((state) => state.auth.isLoggedIn)
     const username = useSelector((state) => state.auth.currentUser?.username)
     const role = useSelector((state) => state.auth.currentUser?.role)
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false)
+    const [isPassword, setIsPassword] = useState(false)
     useEffect(() => {
         if (isLoggedIn) {
             navigate("/", { replace: true })
@@ -34,6 +36,13 @@ function Login(){
 
         dispatch(login({username, password}))
     }
+    function showPasswordHandler(){
+        setIsPasswordVisible((prev) => !prev)
+    }
+    function passwordInputHandler(){
+        const password = document.getElementById("passwordInput").value
+        setIsPassword(password ? true : false)
+    }
         return(
         <main className="h-[100dvh] flex flex-col justify-center items-center bg-blue-300">
             <div className="bg-gradient-to-br bg-blue-950 text-white rounded-lg py-8 px-6">
@@ -47,7 +56,8 @@ function Login(){
                         <input type="text" id="usernameInput" name="username" className="w-full rounded-full border-1 mt-2 border-blue-300 text-white py-3 px-16 focus:outline-1 focus:outline-white placeholder:text-white" placeholder="Username" required/>
                     </div>
                     <div className="mx-4 my-8 relative">
-                        <input type="password" id="passwordInput" name="password" className="w-full rounded-full border-1 mt-2 border-blue-300 text-white py-3 px-16 focus:outline-1 focus:outline-white placeholder:text-white" placeholder="Password" required/>
+                        {isPassword && (<FontAwesomeIcon icon={isPasswordVisible ? faEyeSlash : faEye} className="absolute top-6 left-4 text-xl text-blue-300 hover:cursor-pointer hover:text-blue-100" onClick={showPasswordHandler}/>)}
+                        <input onChange={passwordInputHandler} type={isPasswordVisible ? "text" : "password"} id="passwordInput" name="password" className="w-full rounded-full border-1 mt-2 border-blue-300 text-white py-3 px-16 focus:outline-1 focus:outline-white placeholder:text-white" placeholder="Password" required/>
                         <FontAwesomeIcon icon={faLock} className="absolute p-4 bg-blue-300 rounded-full text-blue-950 text-2xl top-1 right-0"/>
                     </div>
                     <button type="submit" className="w-full bg-blue-300 rounded-full py-2 text-xl font-mono text-blue-950 hover:cursor-pointer hover:bg-blue-500">Login</button>
