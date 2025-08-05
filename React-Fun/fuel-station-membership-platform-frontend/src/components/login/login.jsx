@@ -35,7 +35,7 @@ function Login(){
         dispatch(login({username, password}))
     }
         return(
-        <main className="h-[100dvh] flex flex-col justify-center items-center">
+        <main className="h-[100dvh] flex flex-col justify-center items-center bg-blue-300">
             <div className="bg-gradient-to-br bg-blue-950 text-white rounded-lg py-8 px-6">
                 <div className="text-center">
                     <FontAwesomeIcon icon={faGasPump} className="text-3xl text-blue-300"/>
