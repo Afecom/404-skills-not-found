@@ -136,5 +136,26 @@ export async function ResetPassword(req, res){
     })
 }
 export async function UpdateUser(req, res){
-
+    const body = req.body
+    const { name } = body
+    const id = parseInt(req.params.id)
+    if (!name || !id){
+        throw {
+            code: 400,
+            message: "please provide name and ID"
+        }
+    }
+    const user = users.find(user => user.id === id)
+    if (!user){
+        throw {
+            code: 404,
+            message: "User not found"
+        }
+    }
+    user.name = name
+    const {secret, ...userWithoutPassword} = user
+    res.status(200).send({
+        message: 'User updated successfully',
+        user: userWithoutPassword
+    })
 }
