@@ -38,12 +38,12 @@ export async function GetUsers(req, res){
 }
 export async function RegisterUser(req, res){
     const body = req.body
-    const id = users.length + 1
-    const {name, email, password} = body
-    if (!name || !email || !password){
+    const id = Math.floor(100000 + Math.random() * 90000)
+    const {name, email, password, role} = body
+    if (!name || !email || !password || !role){
         throw{
             status: 401,
-            message: "Please provide the required fields i.e: name, email and password"
+            message: "Please provide the required fields i.e: name, email, password and role"
         }
     }
     const hashedPassword = Hasher(password)
@@ -51,7 +51,8 @@ export async function RegisterUser(req, res){
         id: id,
         name: name,
         userEmail: email,
-        secret: hashedPassword
+        secret: hashedPassword,
+        role: role
     }
     users.push(user)
     const { secret, ...userWithoutPassword} = user
@@ -158,4 +159,25 @@ export async function UpdateUser(req, res){
         message: 'User updated successfully',
         user: userWithoutPassword
     })
+}
+export async function DeleteUser(req, res){
+    const body = req.body
+    const { email } = body 
+    if (!email){
+        throw {
+            code: 500,
+            message: "Please provide the email of the user you want to delete"
+        }
+    }
+    const index = users.findIndex(
+        user => user.userEmail === email
+    )
+    if (!index){
+        throw{
+            code: 404,
+            message: "Couldnt find the user with the provided email address"
+        }
+    }
+    users.splice(index, 1)
+    res.status(200).send("User deleted successfuly")
 }

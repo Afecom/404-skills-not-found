@@ -1,4 +1,4 @@
-import { Login, GetUsers, RegisterUser, GetUserById, ForgotPassword, ResetPassword, UpdateUser } from "../controllers/auth.controller.js";
+import { Login, GetUsers, RegisterUser, GetUserById, ForgotPassword, ResetPassword, UpdateUser, DeleteUser } from "../controllers/auth.controller.js";
 import { Router } from "express";
 export const authRouter = Router()
 
@@ -9,3 +9,4 @@ authRouter.get('/user/:id', GetUserById)
 authRouter.post('/forgot-password', ForgotPassword)
 authRouter.post('/reset-password', ResetPassword)
 authRouter.put('/update-user/:id', UpdateUser)
+authRouter.post('/delete-user', DeleteUser)
