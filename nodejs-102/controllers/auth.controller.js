@@ -34,7 +34,17 @@ export async function Login(req, res){
     })
 }
 export async function GetUsers(req, res){
-    res.send(users)
+    const userWithoutSecret = users.map(({secret, ...userWithoutPassword}) => userWithoutPassword)
+    if (userWithoutSecret.length === 0 ){
+        throw{
+            code: 404,
+            message: "No user found"
+        }
+    }
+    res.status(200).send({
+        message: "Users fetched Successfully",
+        users: userWithoutSecret
+    })
 }
 export async function RegisterUser(req, res){
     const body = req.body
