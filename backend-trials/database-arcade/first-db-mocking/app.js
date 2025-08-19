@@ -9,7 +9,6 @@ app.use(express.json())
 const initializeDatabase = async () => {
     try{
         await sequelize.authenticate();
-        await sequelize.sync({alter: true})
         console.log("The database is successfully connected and synced")
     }
     catch(error){
